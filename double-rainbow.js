@@ -5,7 +5,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var DoubleRainbow = function () {
-    function DoubleRainbow(target, options) {
+    function DoubleRainbow(target) {
         _classCallCheck(this, DoubleRainbow);
 
         this.select = document.querySelector(target);
@@ -27,6 +27,7 @@ var DoubleRainbow = function () {
         value: function _bindEvents() {
             var _this = this;
 
+            // click on button
             this.btn.addEventListener('click', function () {
                 if (_this.wrapper.classList.contains('dr-wrapper--active')) {
                     _this.hideDropdown();
@@ -35,10 +36,25 @@ var DoubleRainbow = function () {
                 }
             });
 
+            // click on color item
             this.list.addEventListener('click', function (event) {
                 if (event.target.dataset.color) {
                     _this.btn.style['background-color'] = event.target.dataset.color;
                     _this.hideDropdown();
+
+                    var index = _this.colors.indexOf(event.target.dataset.color);
+
+                    // select the value
+                    _this.select.options[index].selected = true;
+                }
+            });
+
+            // click ouside the picker
+            document.addEventListener("click", function (event) {
+                if (!_this._findAncestor(event.target, 'dr-wrapper')) {
+                    if (_this.wrapper.classList.contains('dr-wrapper--active')) {
+                        _this.hideDropdown();
+                    }
                 }
             });
         }
@@ -91,6 +107,12 @@ var DoubleRainbow = function () {
 
             this.wrapper.appendChild(this.btn);
             this.wrapper.appendChild(this.list);
+        }
+    }, {
+        key: '_findAncestor',
+        value: function _findAncestor(el, cls) {
+            while ((el = el.parentElement) && !el.classList.contains(cls)) {}
+            return el;
         }
     }]);
 
