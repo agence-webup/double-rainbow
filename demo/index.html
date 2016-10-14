@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Double rainbow</title>
+    <link rel="stylesheet" href="../dist/double-rainbow.css">
+    <style>
+
+    body {
+        display: flex;
+        color: #000;
+        flex-direction: column;
+        align-items: center;
+        height: 100vh;
+        justify-content: center;
+        margin: 0;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        background-color: #9c27b0;
+        background: #43cea2; /* fallback for old browsers */
+        background: -webkit-linear-gradient(to left, #43cea2 , #185a9d); /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to left, #43cea2 , #185a9d); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    }
+
+    .box {
+        background-color: #fff;
+        border-radius: 2px;
+        text-align: center;
+        padding: 2rem;
+        width: 400px;
+    }
+
+    h1 {
+        line-height: 1;
+        margin-bottom: 0;
+    }
+
+    h2 {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .link {
+        display: block;
+        margin-top: 2rem;
+        color: #6b6b6b;
+    }
+
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h1>double-rainbow.js</h1>
+        <h2>So many colors in one plugin!</h2>
+        <select id="picker">
+            <option value="#f44336">red</option>
+            <option value="#03a9f4">blue</option>
+            <option value="#ffeb3b">yellow</option>
+            <option value="#ff5722">orange</option>
+            <option value="#4caf50">green</option>
+            <option value="#795548">brown</option>
+            <option value="#607d8b">grey</option>
+            <option value="#009688">turquoise</option>
+            <option value="#e91e63">pink</option>
+        </select>
+        <a href="#" class="link">Need this, take me to the doc!</a>
+    </div>
+    <script src="../dist/double-rainbow.js"></script>
+    <script>
+    let picker = new DoubleRainbow('#picker', {});
+    picker.init();
+    </script>
+</body>
+</html>
