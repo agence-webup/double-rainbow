@@ -5,7 +5,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var DoubleRainbow = function () {
-    function DoubleRainbow(target, options) {
+    function DoubleRainbow(target) {
         _classCallCheck(this, DoubleRainbow);
 
         this.select = document.querySelector(target);
@@ -39,6 +39,11 @@ var DoubleRainbow = function () {
                 if (event.target.dataset.color) {
                     _this.btn.style['background-color'] = event.target.dataset.color;
                     _this.hideDropdown();
+
+                    var index = _this.colors.indexOf(event.target.dataset.color);
+
+                    // select the value
+                    _this.select.options[index].selected = true;
                 }
             });
         }

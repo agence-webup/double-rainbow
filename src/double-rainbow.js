@@ -2,7 +2,7 @@
 
 class DoubleRainbow {
 
-    constructor(target, options) {
+    constructor(target) {
         this.select = document.querySelector(target);
         this.colors = [];
         this.currentColor;
@@ -29,6 +29,11 @@ class DoubleRainbow {
             if(event.target.dataset.color) {
                 this.btn.style['background-color'] = event.target.dataset.color;
                 this.hideDropdown();
+
+                let index = this.colors.indexOf(event.target.dataset.color);
+
+                // select the value
+                this.select.options[index].selected = true;
             }
         });
 
