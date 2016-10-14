@@ -37,7 +37,7 @@ gulp.task('js', () => {
 
 
 gulp.task('deploy', function() {
-    return gulp.src('./demo/**/*')
+    return gulp.src('./dist/**/*')
     .pipe(ghPages());
 });
 
