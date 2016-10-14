@@ -17,16 +17,19 @@ class DoubleRainbow {
     }
 
     _bindEvents() {
+
+        // click on button
         this.btn.addEventListener('click', () => {
-            if(this.wrapper.classList.contains('dr-wrapper--active')) {
+            if (this.wrapper.classList.contains('dr-wrapper--active')) {
                 this.hideDropdown();
             } else {
                 this.showDropdown();
             }
         });
 
+        // click on color item
         this.list.addEventListener('click', (event) => {
-            if(event.target.dataset.color) {
+            if (event.target.dataset.color) {
                 this.btn.style['background-color'] = event.target.dataset.color;
                 this.hideDropdown();
 
@@ -34,6 +37,15 @@ class DoubleRainbow {
 
                 // select the value
                 this.select.options[index].selected = true;
+            }
+        });
+
+        // click ouside the picker
+        document.addEventListener("click", (event) => {
+            if (!this._findAncestor(event.target, 'dr-wrapper')) {
+                if (this.wrapper.classList.contains('dr-wrapper--active')) {
+                    this.hideDropdown();
+                }
             }
         });
 
@@ -81,6 +93,9 @@ class DoubleRainbow {
         this.wrapper.appendChild(this.list);
     }
 
-
+    _findAncestor(el, cls) {
+        while ((el = el.parentElement) && !el.classList.contains(cls));
+        return el;
+    }
 
 }
