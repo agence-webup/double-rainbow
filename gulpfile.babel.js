@@ -6,7 +6,7 @@ import autoprefixer from 'gulp-autoprefixer';
 import cleanCSS from 'gulp-clean-css';
 import uglify from 'gulp-uglify';
 import babel from 'gulp-babel';
-
+import ghPages from 'gulp-gh-pages';
 
 const reload = browserSync.reload;
 
@@ -35,9 +35,13 @@ gulp.task('js', () => {
         .pipe(gulp.dest('dist'));
 });
 
-/**
- * Watch files for changes
- */
+
+gulp.task('deploy', function() {
+    return gulp.src('./demo/**/*')
+    .pipe(ghPages());
+});
+
+
 gulp.task('watch', () => {
     gulp.watch('src/*.css', ['css']);
     gulp.watch('src/*.js', ['js']);
