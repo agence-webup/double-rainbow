@@ -1,6 +1,6 @@
 # double-rainbow
 
-Double-rainbow allows you to transform a <select> into a nice color picker.
+Double-rainbow allows you to transform a ```<select>``` into a nice color picker.
 
 ## Demo
 
