@@ -6,6 +6,19 @@ Double-rainbow allows you to transform a <select> into a nice color picker.
 
 [https://agence-webup.github.io/double-rainbow/](https://agence-webup.github.io/double-rainbow/)
 
+## Install
+
+### bower
+```shell
+bower install --save double-rainbow
+```
+
+### npm
+```shell
+npm install --save double-rainbow
+```
+
+
 ## Use
 
 Just add a simple select with supported values for colors (option text is used for color title)
