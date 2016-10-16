@@ -27,8 +27,7 @@ Just add a simple select with supported values for colors
 
 Then, instanciate double-rainbow
 ```js
-let picker = new DoubleRainbow('#picker');
-picker.init();
+let picker = new DoubleRainbow('#picker').init();
 ```
 
 The select will be replaced by the picker.
