@@ -1,6 +1,6 @@
 # double-rainbow
 
-So many colors in one plugin!
+Double-rainbow allows you to transform a <select> into a nice color picker.
 
 ## Demo
 
@@ -23,7 +23,6 @@ Just add a simple select with supported values for colors (option text is used f
     <option value="#e91e63">pink</option>
 </select>
 ```
-
 
 Then, instanciate double-rainbow
 ```js
