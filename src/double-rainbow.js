@@ -57,6 +57,7 @@ class DoubleRainbow {
             let listItem = document.createElement('li');
             listItem.style['background-color'] = el.value;
             listItem.dataset.color = el.value;
+            listItem.title = el.text;
             this.list.appendChild(listItem);
         })
 

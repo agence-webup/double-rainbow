@@ -8,7 +8,7 @@ So many colors in one plugin!
 
 ## Use
 
-Just add a simple select with supported values for colors
+Just add a simple select with supported values for colors (option text is used for color title)
 
 ```js
 <select id="picker">
