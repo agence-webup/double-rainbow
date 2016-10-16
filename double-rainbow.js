@@ -68,6 +68,7 @@ var DoubleRainbow = function () {
                 var listItem = document.createElement('li');
                 listItem.style['background-color'] = el.value;
                 listItem.dataset.color = el.value;
+                listItem.title = el.text;
                 _this2.list.appendChild(listItem);
             });
 
