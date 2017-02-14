@@ -1,6 +1,6 @@
 {
   "name": "double-rainbow",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Double-rainbow allows you to transform a <select> into a nice color picker.",
   "main": "dist/double-rainbow.js",
   "scripts": {
