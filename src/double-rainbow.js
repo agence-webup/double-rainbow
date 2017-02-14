@@ -86,6 +86,7 @@ class DoubleRainbow {
 
         this.btn = document.createElement('button');
         this.btn.classList.add('dr-btn');
+        this.btn.type = 'button';
 
         this.list = document.createElement('ul');
         this.list.classList.add('dr-colors');
